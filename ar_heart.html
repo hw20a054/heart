@@ -1,0 +1,375 @@
+<html>
+
+<head>
+  <title>three.js + ar.js</title>
+  <meta name="viewport" content="width=device-width, viewport-fit=cover, shrink-to-fit=no" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .wrapper {
+      position: relative;
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <canvas></canvas>
+  </div>
+  <!--❶ three.jsとAR.jsを読み込む-->
+  <script src="https://unpkg.com/three@0.127.0/build/three.min.js"></script>
+  <script src="https://raw.githack.com/AR-js-org/AR.js/3.3.3/three.js/build/ar.js"></script>
+  <script async>
+    const renderer = new THREE.WebGLRenderer({
+      canvas: document.querySelector('canvas'),
+      antialias: true,
+      alpha: true
+    });
+    const camera = new THREE.PerspectiveCamera();
+    const scene = new THREE.Scene();
+    const markerRoot = new THREE.Group();
+    const arToolkitContext = new THREEx.ArToolkitContext({
+      cameraParametersUrl: './camera.dat', // ❷ camera.datを読み込む
+      detectionMode: 'mono'
+    });
+    const arToolkitSource = new THREEx.ArToolkitSource({
+      sourceType: 'webcam'
+    });
+    const arMarkerControl = new THREEx.ArMarkerControls(arToolkitContext, markerRoot, {
+      type: 'pattern',
+      patternUrl: 'pattern.patt' // ❸ pattern.pattを読み込む
+    });
+
+    renderer.setSize(window.innerWidth, window.innerHeight);
+
+    window.addEventListener('resize', handleResize, {
+      passive: true
+    });
+
+    arToolkitContext.init(() => {
+      camera.projectionMatrix.copy(arToolkitContext.getProjectionMatrix());
+    });
+
+    arToolkitSource.init(() => {
+      document.querySelector('.wrapper').appendChild(arToolkitSource.domElement); // ❹ videoタグを.wrapper配下に移動させる
+      setTimeout(handleResize, 400); // ❺ リサイズイベントを一度発火させる
+    });
+
+    scene.add(markerRoot);
+
+    let degree = 1;
+    let degree1 = 1;
+    let degree2 = 1;
+    let degree3 = 1;
+    let degree4 = 1;
+    let degree5 = 1;
+    let degree6 = 1;
+    let degree7 = 1;
+    let degree8 = 1;
+    let degree9 = 1;
+    let degree10 = 1;
+    let degree11 = 1;
+    let degree12 = 1;
+    let degree13 = 1;
+    let degree14 = 1;
+    let degree15 = 1;
+    let degree16 = 1;
+    let degree17 = 1;
+    let degree18 = 1;
+    let degree19 = 1;
+    let degree20 = 1;
+    let degree21 = 1;
+    let degree22 = 1;
+    let degree23 = 1;
+
+    let radius = 0.03;
+    let radius1 = 0.001;
+    let radius2 = 0.001;
+    let radius3 = 0.001;
+    let radius4 = 0.001;
+    let radius5 = 0.001;
+    let radius6 = 0.001;
+    let radius7 = 0.001;
+    let radius8 = 0.001;
+    let radius9 = 0.001;
+    let radius10 = 0.001;
+    let radius11 = 0.001;
+    let radius12 = 0.001;
+    let radius13 = 0.001;
+    let radius14 = 0.001;
+    let radius15 = 0.001;
+    let radius16 = 0.001;
+    let radius17 = 0.001;
+    let radius18 = 0.001;
+    let radius19 = 0.001;
+    let radius20 = 0.001;
+    let radius21 = 0.001;
+    let radius22 = 0.001;
+    let radius23 = 0.001;
+
+
+
+    const box_geometry = new THREE.BoxGeometry(0.05, 0.05, 0.1);
+    const box_material = new THREE.MeshBasicMaterial({ color: 0xff0000 });
+    const box = new THREE.Mesh(box_geometry, box_material);
+    box.position.set(0, 0, 0);
+    markerRoot.add(box);
+    const box1 = new THREE.Mesh(box_geometry, box_material);
+    box1.position.set(0, 0, 0);
+    markerRoot.add(box1);
+    const box2 = new THREE.Mesh(box_geometry, box_material);
+    box2.position.set(0, 0, 0);
+    markerRoot.add(box2);
+    const box3 = new THREE.Mesh(box_geometry, box_material);
+    box3.position.set(0, 0, 0);
+    markerRoot.add(box3);
+    const box4 = new THREE.Mesh(box_geometry, box_material);
+    box4.position.set(0, 0, 0);
+    markerRoot.add(box4);
+    const box5 = new THREE.Mesh(box_geometry, box_material);
+    box5.position.set(0, 0, 0);
+    markerRoot.add(box5);
+    const box6 = new THREE.Mesh(box_geometry, box_material);
+    box6.position.set(0, 0, 0);
+    markerRoot.add(box6);
+    const box7 = new THREE.Mesh(box_geometry, box_material);
+    box7.position.set(0, 0, 0);
+    markerRoot.add(box7);
+    const box8 = new THREE.Mesh(box_geometry, box_material);
+    box8.position.set(0, 0, 0);
+    markerRoot.add(box8);
+    const box9 = new THREE.Mesh(box_geometry, box_material);
+    box9.position.set(0, 0, 0);
+    markerRoot.add(box9);
+    const box10 = new THREE.Mesh(box_geometry, box_material);
+    box10.position.set(0, 0, 0);
+    markerRoot.add(box10);
+    const box11 = new THREE.Mesh(box_geometry, box_material);
+    box11.position.set(0, 0, 0);
+    markerRoot.add(box11);
+    const box12 = new THREE.Mesh(box_geometry, box_material);
+    box12.position.set(0, 0, 0);
+    markerRoot.add(box12);
+    const box13 = new THREE.Mesh(box_geometry, box_material);
+    box13.position.set(0, 0, 0);
+    markerRoot.add(box13);
+    const box14 = new THREE.Mesh(box_geometry, box_material);
+    box14.position.set(0, 0, 0);
+    markerRoot.add(box14);
+    const box15 = new THREE.Mesh(box_geometry, box_material);
+    box15.position.set(0, 0, 0);
+    markerRoot.add(box15);
+    const box16 = new THREE.Mesh(box_geometry, box_material);
+    box16.position.set(0, 0, 0);
+    markerRoot.add(box16);
+    const box17 = new THREE.Mesh(box_geometry, box_material);
+    box17.position.set(0, 0, 0);
+    markerRoot.add(box17);
+    const box18 = new THREE.Mesh(box_geometry, box_material);
+    box18.position.set(0, 0, 0);
+    markerRoot.add(box18);
+    const box19 = new THREE.Mesh(box_geometry, box_material);
+    box19.position.set(0, 0, 0);
+    markerRoot.add(box19);
+    const box20 = new THREE.Mesh(box_geometry, box_material);
+    box20.position.set(0, 0, 0);
+    markerRoot.add(box20);
+    const box21 = new THREE.Mesh(box_geometry, box_material);
+    box21.position.set(0, 0, 0);
+    markerRoot.add(box21);
+    const box22 = new THREE.Mesh(box_geometry, box_material);
+    box22.position.set(0, 0, 0);
+    markerRoot.add(box22);
+    const box23 = new THREE.Mesh(box_geometry, box_material);
+    box23.position.set(0, 0, 0);
+    markerRoot.add(box23);
+
+
+
+
+
+    function animate() {
+      requestAnimationFrame(animate);
+
+      const rad = degree * Math.PI / 180;
+      const rad1 = degree1 * Math.PI / 180;
+      const rad2 = degree2 * Math.PI / 180;
+      const rad3 = degree3 * Math.PI / 180;
+      const rad4 = degree4 * Math.PI / 180;
+      const rad5 = degree5 * Math.PI / 180;
+      const rad6 = degree6 * Math.PI / 180;
+      const rad7 = degree7 * Math.PI / 180;
+      const rad8 = degree8 * Math.PI / 180;
+      const rad9 = degree9 * Math.PI / 180;
+      const rad10 = degree10 * Math.PI / 180;
+      const rad11 = degree11 * Math.PI / 180;
+      const rad12 = degree12 * Math.PI / 180;
+      const rad13 = degree13 * Math.PI / 180;
+      const rad14 = degree14 * Math.PI / 180;
+      const rad15 = degree15 * Math.PI / 180;
+      const rad16 = degree16 * Math.PI / 180;
+      const rad17 = degree17 * Math.PI / 180;
+      const rad18 = degree18 * Math.PI / 180;
+      const rad19 = degree19 * Math.PI / 180;
+      const rad20 = degree20 * Math.PI / 180;
+      const rad21 = degree21 * Math.PI / 180;
+      const rad22 = degree22 * Math.PI / 180;
+      const rad23 = degree23 * Math.PI / 180;
+
+      box.position.x = -16 * Math.sin(rad) ** 3 * radius;
+      box.position.z = -radius * (13 * Math.cos(rad) - 5 * Math.cos(2 * rad) - 2 * Math.cos(3 * rad) - 1 * Math.cos(4 * rad));
+      if (degree > 10) {
+        box1.position.x = -16 * Math.sin(rad1) ** 3 * radius;
+        box1.position.z = -radius * (13 * Math.cos(rad1) - 5 * Math.cos(2 * rad1) - 2 * Math.cos(3 * rad1) - 1 * Math.cos(4 * rad1));
+        degree1 += 1;
+      }
+      if (degree > 20) {
+        box2.position.x = -16 * Math.sin(rad2) ** 3 * radius;
+        box2.position.z = -radius * (13 * Math.cos(rad2) - 5 * Math.cos(2 * rad2) - 2 * Math.cos(3 * rad2) - 1 * Math.cos(4 * rad2));
+        degree2 += 1;
+      }
+      if (degree > 30) {
+        box3.position.x = -16 * Math.sin(rad3) ** 3 * radius;
+        box3.position.z = -radius * (13 * Math.cos(rad3) - 5 * Math.cos(2 * rad3) - 2 * Math.cos(3 * rad3) - 1 * Math.cos(4 * rad3));
+        degree3 += 1;
+      }
+      if (degree > 40) {
+        box4.position.x = -16 * Math.sin(rad4) ** 3 * radius;
+        box4.position.z = -radius * (13 * Math.cos(rad4) - 5 * Math.cos(2 * rad4) - 2 * Math.cos(3 * rad4) - 1 * Math.cos(4 * rad4));
+        degree4 += 1;
+      }
+      if (degree > 50) {
+        box5.position.x = -16 * Math.sin(rad5) ** 3 * radius;
+        box5.position.z = -radius * (13 * Math.cos(rad5) - 5 * Math.cos(2 * rad5) - 2 * Math.cos(3 * rad5) - 1 * Math.cos(4 * rad5));
+        degree5 += 1;
+      }
+      if (degree > 60) {
+        box6.position.x = -16 * Math.sin(rad6) ** 3 * radius;
+        box6.position.z = -radius * (13 * Math.cos(rad6) - 5 * Math.cos(2 * rad6) - 2 * Math.cos(3 * rad6) - 1 * Math.cos(4 * rad6));
+        degree6 += 1;
+      }
+      if (degree > 70) {
+        box7.position.x = -16 * Math.sin(rad7) ** 3 * radius;
+        box7.position.z = -radius * (13 * Math.cos(rad7) - 5 * Math.cos(2 * rad7) - 2 * Math.cos(3 * rad7) - 1 * Math.cos(4 * rad7));
+        degree7 += 1;
+      }
+      if (degree > 80) {
+        box8.position.x = -16 * Math.sin(rad8) ** 3 * radius;
+        box8.position.z = -radius * (13 * Math.cos(rad8) - 5 * Math.cos(2 * rad8) - 2 * Math.cos(3 * rad8) - 1 * Math.cos(4 * rad8));
+        degree8 += 1;
+      }
+      if (degree > 90) {
+        box9.position.x = -16 * Math.sin(rad9) ** 3 * radius;
+        box9.position.z = -radius * (13 * Math.cos(rad9) - 5 * Math.cos(2 * rad9) - 2 * Math.cos(3 * rad9) - 1 * Math.cos(4 * rad9));
+        degree9 += 1;
+      }
+      if (degree > 100) {
+        box10.position.x = -16 * Math.sin(rad10) ** 3 * radius;
+        box10.position.z = -radius * (13 * Math.cos(rad10) - 5 * Math.cos(2 * rad10) - 2 * Math.cos(3 * rad10) - 1 * Math.cos(4 * rad10));
+        degree10 += 1;
+      }
+      if (degree > 110) {
+        box11.position.x = -16 * Math.sin(rad11) ** 3 * radius;
+        box11.position.z = -radius * (13 * Math.cos(rad11) - 5 * Math.cos(2 * rad11) - 2 * Math.cos(3 * rad11) - 1 * Math.cos(4 * rad11));
+        degree11 += 1;
+      }
+      if (degree > 120) {
+        box12.position.x = -16 * Math.sin(rad12) ** 3 * radius;
+        box12.position.z = -radius * (13 * Math.cos(rad12) - 5 * Math.cos(2 * rad12) - 2 * Math.cos(3 * rad12) - 1 * Math.cos(4 * rad12));
+        degree12 += 1;
+      }
+      if (degree > 130) {
+        box13.position.x = -16 * Math.sin(rad13) ** 3 * radius;
+        box13.position.z = -radius * (13 * Math.cos(rad13) - 5 * Math.cos(2 * rad13) - 2 * Math.cos(3 * rad13) - 1 * Math.cos(4 * rad13));
+        degree13 += 1;
+      }
+      if (degree > 140) {
+        box14.position.x = -16 * Math.sin(rad14) ** 3 * radius;
+        box14.position.z = -radius * (13 * Math.cos(rad14) - 5 * Math.cos(2 * rad14) - 2 * Math.cos(3 * rad14) - 1 * Math.cos(4 * rad14));
+        degree14 += 1;
+      }
+      if (degree > 150) {
+        box15.position.x = -16 * Math.sin(rad15) ** 3 * radius;
+        box15.position.z = -radius * (13 * Math.cos(rad15) - 5 * Math.cos(2 * rad15) - 2 * Math.cos(3 * rad15) - 1 * Math.cos(4 * rad15));
+        degree15 += 1;
+      }
+      if (degree > 160) {
+        box16.position.x = -16 * Math.sin(rad16) ** 3 * radius;
+        box16.position.z = -radius * (13 * Math.cos(rad16) - 5 * Math.cos(2 * rad16) - 2 * Math.cos(3 * rad16) - 1 * Math.cos(4 * rad16));
+        degree16 += 1;
+      }
+      if (degree > 170) {
+        box17.position.x = -16 * Math.sin(rad17) ** 3 * radius;
+        box17.position.z = -radius * (13 * Math.cos(rad17) - 5 * Math.cos(2 * rad17) - 2 * Math.cos(3 * rad17) - 1 * Math.cos(4 * rad17));
+        degree17 += 1;
+      }
+      if (degree > 180) {
+        box18.position.x = -16 * Math.sin(rad18) ** 3 * radius;
+        box18.position.z = -radius * (13 * Math.cos(rad18) - 5 * Math.cos(2 * rad18) - 2 * Math.cos(3 * rad18) - 1 * Math.cos(4 * rad18));
+        degree18 += 1;
+      }
+      if (degree > 190) {
+        box19.position.x = -16 * Math.sin(rad19) ** 3 * radius;
+        box19.position.z = -radius * (13 * Math.cos(rad19) - 5 * Math.cos(2 * rad19) - 2 * Math.cos(3 * rad19) - 1 * Math.cos(4 * rad19));
+        degree19 += 1;
+      }
+      if (degree > 200) {
+        box20.position.x = -16 * Math.sin(rad20) ** 3 * radius;
+        box20.position.z = -radius * (13 * Math.cos(rad20) - 5 * Math.cos(2 * rad20) - 2 * Math.cos(3 * rad20) - 1 * Math.cos(4 * rad20));
+        degree20 += 1;
+      }
+      if (degree > 210) {
+        box21.position.x = -16 * Math.sin(rad21) ** 3 * radius;
+        box21.position.z = -radius * (13 * Math.cos(rad21) - 5 * Math.cos(2 * rad21) - 2 * Math.cos(3 * rad21) - 1 * Math.cos(4 * rad21));
+        degree21 += 1;
+      }
+      if (degree > 220) {
+        box22.position.x = -16 * Math.sin(rad22) ** 3 * radius;
+        box22.position.z = -radius * (13 * Math.cos(rad22) - 5 * Math.cos(2 * rad22) - 2 * Math.cos(3 * rad22) - 1 * Math.cos(4 * rad22));
+        degree22 += 1;
+      }
+      if (degree > 230) {
+        box23.position.x = -16 * Math.sin(rad23) ** 3 * radius;
+        box23.position.z = -radius * (13 * Math.cos(rad23) - 5 * Math.cos(2 * rad23) - 2 * Math.cos(3 * rad23) - 1 * Math.cos(4 * rad23));
+        degree23 += 1;
+      }
+      degree += 1;
+      //radius += 0.001;
+
+    }
+    animate();
+
+    // var delta = -0.01;
+    // setInterval(function () {
+    //   if (material.opacity < 0.0) {
+    //     delta = 0.01;
+    //   } else if (material.opacity > 1.0) {
+    //     delta = -0.01;
+    //   }
+    //   material.opacity += delta;
+    // }, 10);
+
+    renderer.setAnimationLoop((delta) => {
+      if (arToolkitSource.ready) {
+        arToolkitContext.update(arToolkitSource.domElement);
+      }
+
+      renderer.render(scene, camera);
+    });
+
+    function handleResize() {
+      if (arToolkitSource.ready) {
+        arToolkitSource.onResize();
+        arToolkitSource.copySizeTo(renderer.domElement);
+      }
+
+      renderer.setPixelRatio(window.devicePixelRatio);
+    }
+  </script>
+</body>
+
+</html>
